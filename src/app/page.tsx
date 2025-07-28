@@ -85,7 +85,7 @@ const Home = () => {
           }
         ]);
 
-        let url = `https://sales-chatbot-be.vercel.app/chat_stream/${encodeURIComponent(userInput)}`;
+        let url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/chat_stream/${encodeURIComponent(userInput)}`;
         if (checkpointId) {
           url += `?checkpoint_id=${encodeURIComponent(checkpointId)}`;
         }
