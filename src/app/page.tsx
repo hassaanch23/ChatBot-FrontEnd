@@ -165,6 +165,15 @@ const Home = () => {
                     : msg
                 )
               );
+            } else if (data.type === 'error') {
+              setMessages(prev =>
+                prev.map(msg =>
+                  msg.id === aiResponseId
+                    ? { ...msg, content: `Error: ${data.error || "Something went wrong."}`, isLoading: false }
+                    : msg
+                )
+              );
+              eventSource.close();
             } else if (data.type === 'end') {
               if (searchData) {
                 const finalSearchInfo: SearchInfo = {
@@ -223,8 +232,8 @@ const Home = () => {
   };
 
   return (
-    <div className="flex justify-center bg-gray-100 min-h-screen py-8 px-4">
-      <div className="w-[70%] bg-white flex flex-col rounded-xl shadow-lg border border-gray-100 overflow-hidden h-[90vh]">
+    <div className="flex justify-center bg-gray-100 min-h-screen py-4 px-4">
+      <div className="w-[95%] max-w-6xl bg-white flex flex-col rounded-xl shadow-lg border border-gray-100 overflow-hidden min-h-[95vh]">
         <Header />
           <MessageArea
           messages={messages}
