@@ -138,10 +138,10 @@ const MessageArea = ({ messages, showPdfOption }: MessageAreaProps) => {
 
     return (
         <div className="flex-grow overflow-y-auto bg-[#FCFCF8] border-b border-gray-100" style={{ minHeight: 0 }}>
-            <div className="max-w-5xl mx-auto p-8">
+            <div className="max-w-5xl mx-auto p-4 sm:p-6 md:p-8">
                 {messages.map((message) => (
-                    <div key={message.id} className={`flex ${message.isUser ? 'justify-end' : 'justify-start'} mb-6`}>
-                        <div className="flex flex-col max-w-2xl">
+                    <div key={message.id} className={`flex ${message.isUser ? 'justify-end' : 'justify-start'} mb-4 sm:mb-6`}>
+                        <div className="flex flex-col max-w-[85%] sm:max-w-2xl">
                             {/* Search Status Display - Now ABOVE the message */}
                             {!message.isUser && message.searchInfo && (
                                 <SearchStages searchInfo={message.searchInfo} />
@@ -149,7 +149,7 @@ const MessageArea = ({ messages, showPdfOption }: MessageAreaProps) => {
 
                             {/* Message Content */}
                             <div
-                                className={`whitespace-pre-wrap break-words rounded-lg py-4 px-6 text-base md:text-lg leading-relaxed ${
+                                className={`whitespace-pre-wrap break-words rounded-lg py-3 px-4 sm:py-4 sm:px-6 text-sm sm:text-base md:text-lg leading-relaxed ${
                                     message.isUser
                                     ? 'bg-gradient-to-br from-[#5E507F] to-[#4A3F71] text-white rounded-br-none shadow-md'
                                     : 'bg-[#F3F3EE] text-gray-800 border border-gray-200 rounded-bl-none shadow-sm'

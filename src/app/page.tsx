@@ -232,8 +232,8 @@ const Home = () => {
   };
 
   return (
-    <div className="flex justify-center bg-gray-100 min-h-screen py-4 px-4">
-      <div className="w-[95%] max-w-6xl bg-white flex flex-col rounded-xl shadow-lg border border-gray-100 overflow-hidden min-h-[95vh]">
+    <div className="flex justify-center bg-gray-100 min-h-[100dvh] sm:py-4 sm:px-4">
+      <div className="w-full sm:w-[95%] max-w-6xl bg-white flex flex-col sm:rounded-xl shadow-lg border border-gray-100 overflow-hidden min-h-[100dvh] sm:min-h-[95vh]">
         <Header />
           <MessageArea
           messages={messages}
