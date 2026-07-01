@@ -232,8 +232,8 @@ const Home = () => {
   };
 
   return (
-    <div className="flex justify-center bg-gray-100 min-h-[100dvh] sm:py-4 sm:px-4">
-      <div className="w-full sm:w-[95%] max-w-6xl bg-white flex flex-col sm:rounded-xl shadow-lg border border-gray-100 overflow-hidden min-h-[100dvh] sm:min-h-[95vh]">
+    <div className="flex justify-center bg-gray-100 min-h-[100dvh] p-3 sm:py-4 sm:px-4">
+      <div className="w-full sm:w-[95%] max-w-6xl bg-white flex flex-col rounded-2xl sm:rounded-xl shadow-lg border border-gray-100 overflow-hidden min-h-[calc(100dvh-1.5rem)] sm:min-h-[95vh]">
         <Header />
           <MessageArea
           messages={messages}
